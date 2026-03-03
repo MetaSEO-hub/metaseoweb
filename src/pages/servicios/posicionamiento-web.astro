@@ -34,7 +34,7 @@ const included = [
             Posicionamiento web<br />
             <span class="gradient-text">sostenible y medible</span>
           </h1>
-          <p class="text-slate-400 text-xl leading-relaxed mb-8 max-w-2xl">
+          <p class="text-slate-500 text-xl leading-relaxed mb-8 max-w-2xl">
             El posicionamiento web real no es hacer keywords sueltas. Es construir la autoridad total de tu sitio en tu sector, para que Google te vea como la fuente definitiva.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
@@ -65,8 +65,8 @@ const included = [
               <div class="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style="background: rgba(37,99,235,0.1);">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              <h3 class="font-bold text-white mb-2">{item.title}</h3>
-              <p class="text-slate-400 text-sm leading-relaxed">{item.description}</p>
+              <h3 class="font-bold text-slate-900 mb-2">{item.title}</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
@@ -74,11 +74,11 @@ const included = [
     </section>
 
     <!-- RESULTADOS -->
-    <section class="py-20 bg-[#0D1117]">
+    <section class="py-20 bg-slate-50">
       <div class="mx-auto max-w-7xl px-6">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-black mb-4">Resultados que puedes esperar</h2>
-          <p class="text-slate-400">Basados en proyectos reales. Los resultados varían según sector y competencia.</p>
+          <p class="text-slate-500">Basados en proyectos reales. Los resultados varían según sector y competencia.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
@@ -88,10 +88,10 @@ const included = [
           ].map(r => (
             <div class="card text-center">
               <div class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">{r.periodo}</div>
-              <h3 class="text-xl font-bold text-white mb-4">{r.titulo}</h3>
+              <h3 class="text-xl font-bold text-slate-900 mb-4">{r.titulo}</h3>
               <ul class="space-y-2 text-left">
                 {r.items.map(item => (
-                  <li class="flex items-center gap-2 text-sm text-slate-300">
+                  <li class="flex items-center gap-2 text-sm text-slate-600">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     {item}
                   </li>
@@ -111,7 +111,7 @@ const included = [
           Empieza a posicionar<br />
           <span class="gradient-text">tu negocio hoy</span>
         </h2>
-        <p class="text-slate-400 text-lg mb-8">
+        <p class="text-slate-500 text-lg mb-8">
           Solicita una propuesta personalizada. Analizamos tu sector y te presentamos una estrategia con proyección de resultados.
         </p>
         <a href="/contacto" class="btn-primary text-base">

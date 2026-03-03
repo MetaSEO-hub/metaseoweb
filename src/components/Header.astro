@@ -8,18 +8,18 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 border-b border-slate-200">
   <div class="mx-auto max-w-7xl px-6">
     <nav class="flex items-center justify-between h-16 md:h-20" aria-label="Navegación principal">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group" aria-label="MetaSEO - Inicio">
-        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #2563EB, #7C3AED);">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <a href="/" class="flex items-center gap-2" aria-label="MetaSEO - Inicio">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #2563EB, #10B981);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path d="M21 21L16.657 16.657M16.657 16.657A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314Z" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
             <path d="M8 12h4M10 10v4" stroke="white" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
-        <span class="font-bold text-xl text-white tracking-tight">Meta<span class="gradient-text">SEO</span></span>
+        <span class="font-bold text-xl text-slate-900 tracking-tight">Meta<span class="gradient-text">SEO</span></span>
       </a>
 
       <!-- Desktop Nav -->
@@ -29,8 +29,8 @@ const currentPath = Astro.url.pathname;
             href={link.href}
             class={`text-sm font-medium transition-colors duration-200 ${
               currentPath.startsWith(link.href)
-                ? 'text-blue-400'
-                : 'text-slate-300 hover:text-white'
+                ? 'text-blue-600'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             {link.label}
@@ -40,7 +40,7 @@ const currentPath = Astro.url.pathname;
 
       <!-- CTA -->
       <div class="hidden md:flex items-center gap-4">
-        <a href="/contacto" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+        <a href="/contacto" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
           Contacto
         </a>
         <a href="/contacto" class="btn-primary text-sm py-2.5 px-5">
@@ -54,7 +54,7 @@ const currentPath = Astro.url.pathname;
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
+        class="md:hidden p-2 text-slate-600 hover:text-slate-900 transition-colors"
         aria-label="Abrir menú"
         aria-expanded="false"
       >
@@ -68,17 +68,14 @@ const currentPath = Astro.url.pathname;
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden pb-6 border-t border-slate-800 pt-4">
+    <div id="mobile-menu" class="hidden md:hidden pb-6 border-t border-slate-200 pt-4">
       <div class="flex flex-col gap-4">
         {navLinks.map(link => (
-          <a
-            href={link.href}
-            class="text-base font-medium text-slate-300 hover:text-white transition-colors"
-          >
+          <a href={link.href} class="text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">
             {link.label}
           </a>
         ))}
-        <a href="/contacto" class="text-base font-medium text-slate-300 hover:text-white transition-colors">
+        <a href="/contacto" class="text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">
           Contacto
         </a>
         <a href="/contacto" class="btn-primary text-sm justify-center mt-2">
@@ -90,22 +87,11 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <script>
-  const header = document.getElementById('header');
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('icon-open');
   const iconClose = document.getElementById('icon-close');
 
-  // Scroll effect
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      header?.classList.add('bg-[#07080F]/95', 'backdrop-blur-md', 'border-b', 'border-slate-800/50', 'shadow-xl');
-    } else {
-      header?.classList.remove('bg-[#07080F]/95', 'backdrop-blur-md', 'border-b', 'border-slate-800/50', 'shadow-xl');
-    }
-  });
-
-  // Mobile menu toggle
   mobileBtn?.addEventListener('click', () => {
     const isOpen = !mobileMenu?.classList.contains('hidden');
     mobileMenu?.classList.toggle('hidden');

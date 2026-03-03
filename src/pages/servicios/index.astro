@@ -53,7 +53,7 @@ const services = [
         <h1 class="text-5xl md:text-6xl font-black tracking-tight mb-6">
           Servicios SEO en Córdoba<br />que <span class="gradient-text">generan resultados reales</span>
         </h1>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
           Cada servicio está diseñado para un objetivo específico. Elige el que mejor se adapta a tu situación o combínalos para máximo impacto.
         </p>
       </div>
@@ -73,12 +73,12 @@ const services = [
               <Fragment set:html={service.icon} />
             </div>
 
-            <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{service.title}</h2>
-            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-1">{service.description}</p>
+            <h2 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-400 transition-colors">{service.title}</h2>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-1">{service.description}</p>
 
             <ul class="space-y-2 mb-8">
               {service.features.map(f => (
-                <li class="flex items-center gap-2 text-sm text-slate-300">
+                <li class="flex items-center gap-2 text-sm text-slate-600">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   {f}
                 </li>
@@ -94,9 +94,9 @@ const services = [
       </div>
 
       <!-- CTA -->
-      <div class="mt-20 text-center p-12 rounded-2xl border border-slate-800 bg-[#0D1117]">
+      <div class="mt-20 text-center p-12 rounded-2xl border border-slate-200 bg-slate-50">
         <h2 class="text-3xl font-black mb-4">¿No sabes cuál necesitas?</h2>
-        <p class="text-slate-400 mb-8 max-w-lg mx-auto">Empecemos con una auditoría gratuita. Analizamos tu situación y te recomendamos la estrategia óptima.</p>
+        <p class="text-slate-500 mb-8 max-w-lg mx-auto">Empecemos con una auditoría gratuita. Analizamos tu situación y te recomendamos la estrategia óptima.</p>
         <a href="/contacto" class="btn-primary">
           Consulta gratuita sin compromiso
         </a>
