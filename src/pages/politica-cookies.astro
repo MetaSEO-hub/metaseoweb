@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Política de Cookies | MetaSEO Córdoba"
+  description="Política de cookies de MetaSEO. Información sobre los tipos de cookies utilizadas, su finalidad y cómo gestionarlas."
+>
+  <Header />
+
+  <main class="pt-32 pb-24">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="section-label">Legal</div>
+      <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4">Política de Cookies</h1>
+      <p class="text-slate-400 text-sm mb-12">Última actualización: enero 2025</p>
+
+      <div class="prose-legal">
+
+        <h2>1. ¿Qué son las cookies?</h2>
+        <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Sirven para que el sitio web recuerde información sobre tu visita, lo que facilita tu próxima visita y hace que el sitio sea más útil para ti.</p>
+
+        <h2>2. ¿Qué tipos de cookies utilizamos?</h2>
+
+        <h3>Cookies estrictamente necesarias</h3>
+        <p>Son imprescindibles para el funcionamiento del sitio web. Sin ellas, no podrías navegar correctamente. No requieren tu consentimiento.</p>
+
+        <div class="cookie-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Proveedor</th>
+                <th>Finalidad</th>
+                <th>Duración</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>cookieConsent</code></td>
+                <td>metaseo.es</td>
+                <td>Almacena tu preferencia sobre el uso de cookies</td>
+                <td>1 año</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Cookies de análisis (analíticas)</h3>
+        <p>Nos permiten conocer cómo los usuarios interactúan con el sitio web para mejorar su funcionamiento. Solo se activan si aceptas las cookies.</p>
+
+        <div class="cookie-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Proveedor</th>
+                <th>Finalidad</th>
+                <th>Duración</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>_ga</code></td>
+                <td>Google Analytics</td>
+                <td>Distingue a los usuarios únicos del sitio</td>
+                <td>2 años</td>
+              </tr>
+              <tr>
+                <td><code>_ga_*</code></td>
+                <td>Google Analytics</td>
+                <td>Mantiene el estado de la sesión analítica</td>
+                <td>2 años</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Los datos recogidos por Google Analytics son tratados por Google LLC. Más información en la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad de Google</a>.</p>
+
+        <h2>3. Cookies de terceros</h2>
+        <p>Este sitio web puede utilizar servicios de terceros que instalan sus propias cookies. Actualmente:</p>
+        <ul>
+          <li><strong>Google Fonts:</strong> carga tipografías externas. No almacena cookies de seguimiento.</li>
+          <li><strong>Web3Forms:</strong> procesamiento del formulario de contacto. Puede almacenar cookies de sesión temporales.</li>
+        </ul>
+
+        <h2>4. Cómo gestionar las cookies</h2>
+        <p>Puedes gestionar tus preferencias de cookies en cualquier momento a través del banner de cookies que aparece al acceder al sitio por primera vez, o haciendo clic en <button id="open-cookie-settings" class="inline text-blue-600 underline hover:text-blue-700 bg-transparent border-0 cursor-pointer p-0 font-inherit text-[0.9375rem]">Configurar cookies</button>.</p>
+        <p>También puedes bloquear o eliminar cookies directamente desde la configuración de tu navegador:</p>
+        <ul>
+          <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+          <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-preferencias-firefox" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+          <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a></li>
+          <li><a href="https://support.microsoft.com/es-es/windows/eliminar-y-administrar-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+        </ul>
+        <p>Ten en cuenta que deshabilitar ciertas cookies puede afectar al funcionamiento del sitio web.</p>
+
+        <h2>5. Actualizaciones de esta política</h2>
+        <p>Esta Política de Cookies puede actualizarse para reflejar cambios en las cookies que utilizamos. Te recomendamos revisarla periódicamente. La fecha de la última actualización aparece al inicio de este documento.</p>
+
+        <h2>6. Más información</h2>
+        <p>Para cualquier duda sobre el uso de cookies, puedes contactarnos en <a href="mailto:hola@metaseo.es">hola@metaseo.es</a> o consultar nuestra <a href="/politica-privacidad">Política de Privacidad</a>.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  document.getElementById('open-cookie-settings')?.addEventListener('click', () => {
+    localStorage.removeItem('cookieConsent');
+    window.location.reload();
+  });
+</script>
+
+<style>
+  .prose-legal h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-legal h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose-legal p {
+    color: #475569;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+  }
+  .prose-legal ul {
+    color: #475569;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+    list-style: disc;
+    font-size: 0.9375rem;
+  }
+  .prose-legal li {
+    margin-bottom: 0.25rem;
+  }
+  .prose-legal a {
+    color: #2563EB;
+    text-decoration: underline;
+  }
+  .prose-legal a:hover {
+    color: #1D4ED8;
+  }
+  .cookie-table {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+  .cookie-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  .cookie-table th {
+    background: #F1F5F9;
+    color: #475569;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid #E2E8F0;
+  }
+  .cookie-table td {
+    color: #475569;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid #E2E8F0;
+    vertical-align: top;
+  }
+  .cookie-table code {
+    background: #F1F5F9;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.8125rem;
+    color: #2563EB;
+  }
+</style>

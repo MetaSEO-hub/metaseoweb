@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
   title: string;
@@ -91,6 +92,9 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
   </head>
   <body class="min-h-screen bg-white text-slate-900">
     <slot />
+
+    <!-- Cookie Banner -->
+    <CookieBanner />
 
     <!-- WhatsApp flotante -->
     <a

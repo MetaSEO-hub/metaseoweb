@@ -327,6 +327,19 @@ const faqs = [
                 <textarea id="hf-mensaje" name="mensaje" rows="4" required placeholder="Cuéntanos tu reto de posicionamiento..." class="form-input w-full resize-none"></textarea>
               </div>
 
+              <div class="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="hf-privacidad"
+                  name="privacidad"
+                  required
+                  class="mt-1 w-4 h-4 rounded border-slate-300 text-blue-600 shrink-0 cursor-pointer"
+                />
+                <label for="hf-privacidad" class="text-slate-500 text-xs leading-relaxed cursor-pointer">
+                  He leído y acepto la <a href="/politica-privacidad" class="text-blue-600 underline hover:text-blue-700" target="_blank">Política de Privacidad</a>. Consiento el tratamiento de mis datos para atender mi consulta.
+                </label>
+              </div>
+
               <button type="submit" id="submit-btn" class="btn-primary w-full justify-center">
                 <span id="btn-text">Enviar consulta gratis</span>
                 <svg id="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
