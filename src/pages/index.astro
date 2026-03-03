@@ -51,37 +51,44 @@ const faqs = [
     <!-- HERO -->
     <section class="pt-40 pb-24 border-b border-slate-200 bg-white">
       <div class="mx-auto max-w-7xl px-6">
-        <div class="flex items-center gap-2 mb-8">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span class="text-sm font-semibold text-emerald-600 tracking-widest uppercase">Agencia SEO · Córdoba</span>
-        </div>
-
-        <div class="max-w-5xl mb-10">
-          <h1 class="text-6xl md:text-8xl font-black tracking-tight leading-[0.95]">
-            Agencia SEO en Córdoba<br />que <span class="gradient-text">domina Google.</span>
-          </h1>
-        </div>
-
-        <div class="flex flex-col lg:flex-row lg:items-end gap-10 lg:gap-24">
-          <p class="text-slate-500 text-lg leading-relaxed max-w-xl">
-            Construimos autoridad tópica real para que Google te vea como la fuente más relevante de tu sector. SEO semántico que genera tráfico cualificado y conversiones.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 shrink-0">
-            <a href="/servicios/auditoria-seo" class="btn-primary">
-              Auditoría gratis
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="/servicios" class="btn-secondary">Ver servicios</a>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div>
+            <div class="flex items-center gap-2 mb-8">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="text-sm font-semibold text-emerald-600 tracking-widest uppercase">Agencia SEO · Córdoba</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[0.95] mb-8">
+              Agencia SEO en Córdoba<br />que <span class="gradient-text">domina Google.</span>
+            </h1>
+            <p class="text-slate-500 text-lg leading-relaxed mb-8">
+              Construimos autoridad tópica real para que Google te vea como la fuente más relevante de tu sector. SEO semántico que genera tráfico cualificado y conversiones.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-10">
+              <a href="/servicios/auditoria-seo" class="btn-primary">
+                Auditoría gratis
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="/servicios" class="btn-secondary">Ver servicios</a>
+            </div>
+            <div class="flex flex-wrap gap-6">
+              {['Sin permanencia mínima', 'Auditoría inicial gratuita', 'Reporting mensual detallado', '+150 proyectos completados'].map(t => (
+                <span class="flex items-center gap-2 text-sm text-slate-500">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div class="flex flex-wrap gap-6 mt-14">
-          {['Sin permanencia mínima', 'Auditoría inicial gratuita', 'Reporting mensual detallado', '+150 proyectos completados'].map(t => (
-            <span class="flex items-center gap-2 text-sm text-slate-500">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              {t}
-            </span>
-          ))}
+          <div class="hidden lg:block">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+              alt="Analítica web y posicionamiento SEO en Google - Agencia MetaSEO Córdoba"
+              class="rounded-2xl w-full shadow-xl border border-slate-100"
+              loading="eager"
+              width="900"
+              height="600"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -199,7 +206,15 @@ const faqs = [
             </a>
           </div>
 
-          <div class="grid grid-cols-1 gap-4">
+          <div class="space-y-4">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+              alt="Dashboard de métricas SEO y autoridad tópica - MetaSEO"
+              class="rounded-xl w-full shadow-md border border-slate-100 mb-4"
+              loading="lazy"
+              width="800"
+              height="480"
+            />
             {[
               { title: 'Autoridad Tópica', desc: 'Cubrimos cada aspecto de tu nicho para que Google te reconozca como la fuente definitiva.' },
               { title: 'Resultados Medibles', desc: 'KPIs claros desde el día 1. Posiciones, tráfico, conversiones y Topic Strength Score.' },
