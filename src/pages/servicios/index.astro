@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const services = [
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    title: 'SEO Local Córdoba',
+    description: 'Aparece primero cuando alguien busca tu negocio en Córdoba. Domina el Google Maps Pack y los resultados locales con una estrategia de SEO local diseñada para tu ciudad.',
+    href: '/servicios/seo-local-cordoba',
+    features: ['Google Maps Pack', 'Google Business Profile', 'Citations y NAP', 'Keywords locales', 'Reviews strategy'],
+    badge: { text: 'Alta conversión', color: 'emerald' },
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>`,
+    title: 'Auditoría SEO',
+    description: 'Análisis técnico completo de 100 puntos de tu sitio web. Identificamos todos los problemas que frenan tu posicionamiento y priorizamos las acciones de mayor impacto.',
+    href: '/servicios/auditoria-seo',
+    features: ['SEO técnico', 'Arquitectura web', 'Contenido y semántica', 'Link profile', 'Core Web Vitals'],
+    badge: { text: 'Gratis', color: 'emerald' },
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+    title: 'Posicionamiento Web',
+    description: 'Estrategia SEO completa con enfoque en autoridad tópica. Construimos el mapa tópico, los contenidos y el perfil de enlaces para que domines tu nicho a largo plazo.',
+    href: '/servicios/posicionamiento-web',
+    features: ['Mapa tópico completo', 'Contenido semántico', 'Link building', 'SEO técnico', 'Reporting mensual'],
+    badge: null,
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+    title: 'SEO para Empresas',
+    description: 'Soluciones SEO enterprise para empresas medianas y grandes. Gestión de proyectos complejos, múltiples dominios, equipos internos y KPIs a medida del negocio.',
+    href: '/servicios/seo-para-empresas',
+    features: ['Consultoría estratégica', 'Multi-dominio', 'Formación equipos', 'KPIs personalizados', 'Account dedicado'],
+    badge: null,
+  },
+];
+---
+
+<Layout
+  title="Servicios SEO | MetaSEO Agencia SEO Córdoba"
+  description="Servicios SEO profesionales en Córdoba: SEO Local, Auditoría SEO, Posicionamiento Web y SEO para Empresas. Estrategias de autoridad tópica con resultados medibles."
+>
+  <Header />
+
+  <main class="pt-32 pb-24">
+    <div class="mx-auto max-w-7xl px-6">
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <div class="section-label mx-auto w-fit">Servicios SEO</div>
+        <h1 class="text-5xl md:text-6xl font-black tracking-tight mb-6">
+          Servicios SEO en Córdoba<br />que <span class="gradient-text">generan resultados reales</span>
+        </h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          Cada servicio está diseñado para un objetivo específico. Elige el que mejor se adapta a tu situación o combínalos para máximo impacto.
+        </p>
+      </div>
+
+      <!-- Services grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {services.map(service => (
+          <div class="card group relative flex flex-col">
+            {service.badge && (
+              <span class="absolute top-6 right-6 text-xs font-semibold px-3 py-1 rounded-full"
+                style="background: rgba(16,185,129,0.15); color: #10B981; border: 1px solid rgba(16,185,129,0.3);">
+                {service.badge.text}
+              </span>
+            )}
+
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-blue-400" style="background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.2);">
+              <Fragment set:html={service.icon} />
+            </div>
+
+            <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{service.title}</h2>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-1">{service.description}</p>
+
+            <ul class="space-y-2 mb-8">
+              {service.features.map(f => (
+                <li class="flex items-center gap-2 text-sm text-slate-300">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            <a href={service.href} class="btn-primary text-sm justify-center">
+              Ver servicio completo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-20 text-center p-12 rounded-2xl border border-slate-800 bg-[#0D1117]">
+        <h2 class="text-3xl font-black mb-4">¿No sabes cuál necesitas?</h2>
+        <p class="text-slate-400 mb-8 max-w-lg mx-auto">Empecemos con una auditoría gratuita. Analizamos tu situación y te recomendamos la estrategia óptima.</p>
+        <a href="/contacto" class="btn-primary">
+          Consulta gratuita sin compromiso
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

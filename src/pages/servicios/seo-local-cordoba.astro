@@ -1,0 +1,169 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const benefits = [
+  { title: 'Google Maps Pack', description: 'Aparece en el bloque de 3 resultados locales que concentran el 44% de los clics en búsquedas locales.' },
+  { title: 'SEO Local On-Page', description: 'Optimizamos cada página con señales geográficas, schema LocalBusiness y contenido relevante para tu zona.' },
+  { title: 'Google Business Profile', description: 'Optimización completa de tu ficha de Google: categorías, atributos, posts, Q&A y gestión de reviews.' },
+  { title: 'Citations y NAP', description: 'Construcción y limpieza de citas en directorios clave para reforzar tu presencia local y consistencia de datos.' },
+  { title: 'Keywords Geolocalizadas', description: 'Investigación de keywords con intención local real: "servicio + Córdoba", barrios, zonas y variaciones geográficas.' },
+  { title: 'Review Strategy', description: 'Sistema para generar reseñas positivas de forma ética y gestionar tu reputación online activamente.' },
+];
+
+const locations = [
+  'Córdoba Capital', 'El Brillante', 'Centro Histórico', 'Casco Antiguo',
+  'Parque Figueroa', 'Pedroches', 'Lucena', 'Puente Genil', 'Priego de Córdoba',
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "SEO Local Córdoba",
+  "description": "Servicio de posicionamiento SEO local en Córdoba para aparecer en Google Maps y resultados locales.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "MetaSEO",
+    "address": { "@type": "PostalAddress", "addressLocality": "Córdoba", "addressCountry": "ES" }
+  },
+  "areaServed": "Córdoba",
+  "serviceType": "SEO Local"
+};
+---
+
+<Layout
+  title="SEO Local Córdoba | Posicionamiento Local Google Maps"
+  description="Servicio de SEO local en Córdoba. Aparece en Google Maps Pack y en los primeros resultados cuando te buscan en Córdoba. Más clientes locales, más ventas."
+  schema={schema}
+>
+  <Header />
+
+  <main>
+    <!-- HERO -->
+    <section class="relative pt-40 pb-24 grid-bg overflow-hidden">
+      <div class="absolute top-1/3 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl pointer-events-none" style="background: radial-gradient(circle, #10B981, transparent);"></div>
+
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl">
+          <div class="section-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            SEO Local · Córdoba
+          </div>
+          <h1 class="text-5xl md:text-6xl font-black tracking-tight mb-6">
+            SEO Local Córdoba:<br />
+            <span class="gradient-text-green">tu negocio en el top</span>
+          </h1>
+          <p class="text-slate-400 text-xl leading-relaxed mb-8 max-w-2xl">
+            El 46% de las búsquedas en Google tienen intención local. Si tu negocio no aparece cuando te buscan en Córdoba, estás perdiendo clientes a tu competencia cada día.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contacto" class="btn-primary">
+              Quiero más clientes locales
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/servicios/auditoria-seo" class="btn-secondary">
+              Auditoría local gratuita
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="py-20 bg-[#0D1117]">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div class="section-label">El problema</div>
+            <h2 class="text-3xl md:text-4xl font-black mb-6">
+              Tu competencia aparece antes que tú.<br />
+              <span class="gradient-text">Eso tiene solución.</span>
+            </h2>
+            <div class="space-y-4 text-slate-400">
+              <p>Cuando alguien busca "fontanero en Córdoba" o "restaurante centro Córdoba", Google muestra un mapa con 3 resultados destacados. Si no estás ahí, no existes para esos clientes.</p>
+              <p>El SEO local no es solo tener una web. Es una combinación de señales técnicas, contenido, autoridad y presencia que Google usa para decidir quién merece aparecer.</p>
+              <p>Con la estrategia correcta, cualquier negocio local puede competir y ganar visibilidad en su ciudad.</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {[
+              { value: '46%', label: 'de búsquedas tienen intención local' },
+              { value: '78%', label: 'de búsquedas locales terminan en compra' },
+              { value: '3.5x', label: 'más conversión en búsquedas locales vs generales' },
+              { value: '88%', label: 'de usuarios visitan el negocio el mismo día' },
+            ].map(s => (
+              <div class="card text-center">
+                <div class="text-3xl font-black gradient-text mb-1">{s.value}</div>
+                <div class="text-slate-400 text-xs leading-snug">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS DETALLE -->
+    <section class="py-24">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16">
+          <div class="section-label mx-auto w-fit">Qué incluye</div>
+          <h2 class="text-4xl font-black mb-4">
+            SEO Local <span class="gradient-text">completo y sin atajos</span>
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {benefits.map(b => (
+            <div class="card">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3 class="font-bold text-white mb-2">{b.title}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">{b.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ZONAS -->
+    <section class="py-20 bg-[#0D1117]">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-black mb-4">Cubrimos toda la provincia de Córdoba</h2>
+          <p class="text-slate-400">Desde el centro de Córdoba hasta todos los municipios de la provincia.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 justify-center">
+          {locations.map(loc => (
+            <span class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-slate-700 bg-slate-800/50">
+              {loc}
+            </span>
+          ))}
+          <span class="px-4 py-2 rounded-full text-sm font-medium text-blue-400 border border-blue-800 bg-blue-900/20">
+            + toda la provincia
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 relative overflow-hidden">
+      <div class="absolute inset-0 grid-bg opacity-20"></div>
+      <div class="relative mx-auto max-w-3xl px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-black mb-6">
+          ¿Tu negocio no aparece<br />
+          <span class="gradient-text-green">en el mapa de Córdoba?</span>
+        </h2>
+        <p class="text-slate-400 text-lg mb-8">
+          Solicita una auditoría SEO local gratuita. Analizamos tu presencia actual y te mostramos exactamente qué debes mejorar para aparecer antes que tu competencia.
+        </p>
+        <a href="/contacto" class="btn-primary text-base">
+          Quiero mi auditoría local gratuita
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

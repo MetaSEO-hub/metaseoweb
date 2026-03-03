@@ -1,0 +1,168 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const auditSections = [
+  {
+    number: '01',
+    title: 'SEO Técnico',
+    items: ['Rastreo e indexación', 'Core Web Vitals', 'Mobile-first', 'Structured data', 'Hreflang', 'Canonicals', 'Sitemap y robots.txt'],
+  },
+  {
+    number: '02',
+    title: 'Arquitectura Web',
+    items: ['Estructura de URLs', 'Profundidad de clics', 'Navegación y menús', 'Paginación', 'Faceted navigation', 'Arquitectura de información'],
+  },
+  {
+    number: '03',
+    title: 'Contenido & Semántica',
+    items: ['Calidad y relevancia', 'Autoridad tópica', 'Entidad central y atributos', 'Cobertura tópica', 'Canibalización', 'Thin content'],
+  },
+  {
+    number: '04',
+    title: 'On-Page',
+    items: ['Titles y meta descriptions', 'Estructura de headings', 'Keywords y intención', 'Internal linking', 'Alt texts', 'Contenido duplicado'],
+  },
+  {
+    number: '05',
+    title: 'Link Profile',
+    items: ['Autoridad de dominio', 'Perfil de backlinks', 'Tóxicos y disavow', 'Anchor text distribution', 'Link velocity', 'Competencia vs tú'],
+  },
+  {
+    number: '06',
+    title: 'Experiencia de Usuario',
+    items: ['EEAT signals', 'Bounce rate y tiempo', 'CTR en SERPs', 'Conversión orgánica', 'Usabilidad móvil', 'Accesibilidad'],
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Auditoría SEO",
+  "description": "Auditoría SEO completa de 100 puntos. Análisis técnico, contenido, links y experiencia de usuario para identificar todos los problemas de posicionamiento.",
+  "provider": { "@type": "LocalBusiness", "name": "MetaSEO" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Auditoría inicial gratuita" }
+};
+---
+
+<Layout
+  title="Auditoría SEO Gratuita | Análisis SEO Completo - MetaSEO"
+  description="Auditoría SEO gratuita de 100 puntos. Analizamos SEO técnico, contenido, links y usabilidad. Descubre qué frena tu posicionamiento en Google. Sin coste, sin compromiso."
+  schema={schema}
+>
+  <Header />
+
+  <main>
+    <!-- HERO -->
+    <section class="relative pt-40 pb-24 grid-bg overflow-hidden">
+      <div class="absolute top-1/4 left-1/3 w-96 h-96 rounded-full opacity-8 blur-3xl pointer-events-none" style="background: radial-gradient(circle, #7C3AED, transparent);"></div>
+
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl">
+          <div class="section-label">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Auditoría SEO · Gratuita
+          </div>
+          <h1 class="text-5xl md:text-6xl font-black tracking-tight mb-6">
+            Auditoría SEO gratuita:<br />
+            <span class="gradient-text">descubre por qué no posicionas</span>
+          </h1>
+          <p class="text-slate-400 text-xl leading-relaxed mb-8 max-w-2xl">
+            Análisis exhaustivo de 100 puntos. Sin ambigüedades, sin tecnicismos innecesarios. Te decimos exactamente qué está mal y cómo solucionarlo.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contacto" class="btn-primary">
+              Solicitar Auditoría Gratuita
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <p class="text-slate-500 text-sm mt-4 flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Sin compromiso. Sin tarjeta de crédito. Respuesta en 24h.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUÉ INCLUYE -->
+    <section class="py-24 bg-[#0D1117]">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16">
+          <div class="section-label mx-auto w-fit">100 puntos de análisis</div>
+          <h2 class="text-4xl font-black mb-4">
+            Una auditoría <span class="gradient-text">sin puntos ciegos</span>
+          </h2>
+          <p class="text-slate-400 max-w-xl mx-auto">
+            Cubrimos los 6 pilares que determinan si Google posiciona tu web o la ignora.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {auditSections.map(section => (
+            <div class="card">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs font-black text-blue-400">{section.number}</span>
+                <h3 class="font-bold text-white">{section.title}</h3>
+              </div>
+              <ul class="space-y-2">
+                {section.items.map(item => (
+                  <li class="flex items-center gap-2 text-sm text-slate-400">
+                    <span class="w-1 h-1 rounded-full bg-slate-600 shrink-0"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="py-24">
+      <div class="mx-auto max-w-4xl px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-black mb-4">Cómo funciona</h2>
+        </div>
+        <div class="space-y-6">
+          {[
+            { n: '1', t: 'Solicita la auditoría', d: 'Rellena el formulario de contacto con la URL de tu web y tu sector. Sin más datos.' },
+            { n: '2', t: 'Análisis en 48-72h', d: 'Nuestro equipo analiza tu web con herramientas profesionales y revisión manual.' },
+            { n: '3', t: 'Informe detallado', d: 'Recibes un informe completo con todos los problemas identificados, su impacto y cómo solucionarlos.' },
+            { n: '4', t: 'Reunión de presentación', d: 'Presentamos los resultados por videollamada y respondemos todas tus dudas. Sin presión de venta.' },
+          ].map(step => (
+            <div class="flex gap-6 items-start">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center font-black text-sm shrink-0" style="background: linear-gradient(135deg, #2563EB, #7C3AED);">
+                {step.n}
+              </div>
+              <div class="card flex-1">
+                <h3 class="font-bold text-white mb-1">{step.t}</h3>
+                <p class="text-slate-400 text-sm">{step.d}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-[#0D1117]">
+      <div class="mx-auto max-w-3xl px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-black mb-6">
+          Tu auditoría SEO,<br />
+          <span class="gradient-text">completamente gratis</span>
+        </h2>
+        <p class="text-slate-400 text-lg mb-10">
+          No hay truco. Creemos que cuando ves el valor de nuestro análisis, querrás trabajar con nosotros. Pero si no, te quedas con el informe igualmente.
+        </p>
+        <a href="/contacto" class="btn-primary text-base">
+          Solicitar mi auditoría gratuita
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

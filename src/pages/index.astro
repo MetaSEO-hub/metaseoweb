@@ -1,0 +1,511 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const stats = [
+  { value: '+150', label: 'Proyectos completados' },
+  { value: '+300%', label: 'Aumento de tráfico medio' },
+  { value: '5+', label: 'Años de experiencia' },
+  { value: '94%', label: 'Clientes que renuevan' },
+];
+
+const services = [
+  {
+    num: '01',
+    title: 'SEO Local Córdoba',
+    description: 'Domina el Google Maps Pack y los resultados locales. Capta clientes de tu ciudad antes que tu competencia.',
+    href: '/servicios/seo-local-cordoba',
+    tag: 'Alto impacto',
+  },
+  {
+    num: '02',
+    title: 'Auditoría SEO',
+    description: 'Análisis exhaustivo de 100 puntos. Identificamos cada problema que frena tu posicionamiento y los priorizamos por impacto.',
+    href: '/servicios/auditoria-seo',
+    tag: 'Gratis',
+  },
+  {
+    num: '03',
+    title: 'Posicionamiento Web',
+    description: 'Estrategia SEO integral con arquitectura semántica y autoridad tópica para dominar tu nicho a largo plazo.',
+    href: '/servicios/posicionamiento-web',
+    tag: null,
+  },
+  {
+    num: '04',
+    title: 'SEO para Empresas',
+    description: 'Consultoría estratégica, account dedicado y KPIs de negocio reales para empresas medianas y grandes.',
+    href: '/servicios/seo-para-empresas',
+    tag: null,
+  },
+];
+
+const process = [
+  { num: '01', title: 'Research Semántico', desc: 'Entidad central, atributos y keywords con intención real. La base de todo.' },
+  { num: '02', title: 'Mapa Tópico', desc: 'Arquitectura Hub-Cluster-Leaf para construir autoridad tópica sólida.' },
+  { num: '03', title: 'Contenido Semántico', desc: 'Briefs con vectores contextuales, microsemantics y estructura E-A-V.' },
+  { num: '04', title: 'Auditoría Continua', desc: 'Sistema de 100 puntos. Control de calidad antes y después de publicar.' },
+  { num: '05', title: 'Linking & KPIs', desc: 'Matriz de enlaces internos y tracking con Topic Strength Score (TSS).' },
+];
+
+const testimonials = [
+  {
+    quote: 'En 6 meses pasamos de la página 5 a los 3 primeros resultados para nuestras keywords principales. El ROI ha sido brutal.',
+    name: 'Carlos M.',
+    role: 'Director de Marketing',
+    company: 'Empresa Industrial',
+  },
+  {
+    quote: 'MetaSEO no es una agencia SEO normal. Su metodología semántica es diferente. Triplicamos el tráfico orgánico en un año.',
+    name: 'Laura P.',
+    role: 'CEO',
+    company: 'E-commerce de Moda',
+  },
+  {
+    quote: 'Llevamos 3 años trabajando juntos. Son los únicos que entienden de verdad cómo funciona Google a nivel semántico.',
+    name: 'Antonio R.',
+    role: 'Propietario',
+    company: 'Clínica Dental Córdoba',
+  },
+];
+
+const faqs = [
+  { q: '¿Cuánto tiempo tarda en verse resultados del SEO?', a: 'Los primeros movimientos se ven entre 60-90 días. Resultados sólidos a partir del mes 4-6. El SEO es una inversión a medio-largo plazo con retorno acumulativo.' },
+  { q: '¿Qué diferencia a MetaSEO de otras agencias SEO?', a: 'Usamos metodología de SEO Semántico basada en autoridad tópica. No hacemos SEO de keywords aisladas. Construimos la autoridad total de tu sitio en tu nicho.' },
+  { q: '¿Trabajáis con cualquier tipo de negocio?', a: 'Sí, tenemos experiencia en e-commerce, pymes locales, B2B, clínicas y despachos profesionales. Adaptamos la estrategia a cada sector.' },
+  { q: '¿Ofrecéis auditoría SEO gratuita?', a: 'Sí. Realizamos una auditoría inicial gratuita para identificar los principales problemas y oportunidades de tu web antes de proponer ninguna solución.' },
+  { q: '¿Qué incluye el servicio de SEO mensual?', a: 'Estrategia, ejecución técnica, contenido, link building, reporting mensual con KPIs y reunión de seguimiento.' },
+];
+---
+
+<Layout
+  title="MetaSEO — Agencia SEO en Córdoba | Posicionamiento Semántico"
+  description="Agencia SEO en Córdoba especializada en autoridad tópica y posicionamiento semántico. Más de 150 proyectos, +300% de tráfico orgánico. Auditoría gratuita."
+>
+  <Header />
+
+  <main>
+
+    <!-- ══════════════════ HERO ══════════════════ -->
+    <section class="pt-40 pb-24 border-b border-[#1E2D45]">
+      <div class="mx-auto max-w-7xl px-6">
+
+        <!-- Tag superior -->
+        <div class="flex items-center gap-2 mb-8">
+          <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+          <span class="text-sm font-semibold text-blue-400 tracking-widest uppercase">Agencia SEO · Córdoba</span>
+        </div>
+
+        <!-- Headline -->
+        <div class="max-w-5xl mb-10">
+          <h1 class="text-6xl md:text-8xl font-black tracking-tight leading-[0.95]">
+            Agencia SEO en Córdoba<br />que <span class="gradient-text">domina Google.</span>
+          </h1>
+        </div>
+
+        <!-- Descripción + CTAs en row -->
+        <div class="flex flex-col lg:flex-row lg:items-end gap-10 lg:gap-24">
+          <p class="text-slate-400 text-lg leading-relaxed max-w-xl">
+            Construimos autoridad tópica real para que Google te vea como la fuente más relevante de tu sector. SEO semántico que genera tráfico cualificado y conversiones.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+            <a href="/servicios/auditoria-seo" class="btn-primary">
+              Auditoría gratis
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/servicios" class="btn-secondary">Ver servicios</a>
+          </div>
+        </div>
+
+        <!-- Trust pills -->
+        <div class="flex flex-wrap gap-6 mt-14">
+          {['Sin permanencia mínima', 'Auditoría inicial gratuita', 'Reporting mensual detallado', '+150 proyectos completados'].map(t => (
+            <span class="flex items-center gap-2 text-sm text-slate-400">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              {t}
+            </span>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════ STATS ══════════════════ -->
+    <section class="border-b border-[#1E2D45]">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#1E2D45]">
+          {stats.map(s => (
+            <div class="py-12 px-8 first:pl-0 last:pr-0">
+              <div class="text-5xl md:text-6xl font-black tracking-tight gradient-text mb-2">{s.value}</div>
+              <div class="text-slate-400 text-sm">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════ SERVICIOS ══════════════════ -->
+    <section class="py-28 border-b border-[#1E2D45]">
+      <div class="mx-auto max-w-7xl px-6">
+
+        <!-- Header de sección -->
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+          <div>
+            <p class="section-label">Servicios</p>
+            <h2 class="text-5xl md:text-6xl font-black tracking-tight leading-tight">
+              Todo lo que<br />necesitas para<br /><span class="gradient-text">crecer en Google</span>
+            </h2>
+          </div>
+          <a href="/servicios" class="btn-secondary shrink-0 self-start md:self-auto">
+            Ver todos los servicios
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Grid de servicios -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1E2D45]">
+          {services.map(s => (
+            <a href={s.href} class="group bg-[#07080F] p-10 flex flex-col gap-4 hover:bg-[#0D1117] transition-colors duration-200">
+              <div class="flex items-start justify-between">
+                <span class="step-number">{s.num}</span>
+                {s.tag && (
+                  <span class="text-xs font-bold px-2.5 py-1 rounded-full"
+                    style={s.tag === 'Gratis'
+                      ? 'background: rgba(16,185,129,0.1); color: #10B981; border: 1px solid rgba(16,185,129,0.25);'
+                      : 'background: rgba(37,99,235,0.1); color: #60A5FA; border: 1px solid rgba(37,99,235,0.25);'
+                    }>
+                    {s.tag}
+                  </span>
+                )}
+              </div>
+              <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">{s.title}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed flex-1">{s.description}</p>
+              <span class="flex items-center gap-1.5 text-sm font-semibold text-blue-400 group-hover:gap-3 transition-all duration-200">
+                Saber más
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════ PROCESO ══════════════════ -->
+    <section class="py-28 border-b border-[#1E2D45] bg-[#0D1117]">
+      <div class="mx-auto max-w-7xl px-6">
+
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+          <div>
+            <p class="section-label">Metodología</p>
+            <h2 class="text-5xl md:text-6xl font-black tracking-tight leading-tight">
+              Un proceso<br /><span class="gradient-text">probado</span>
+            </h2>
+          </div>
+          <a href="/metodologia" class="btn-secondary shrink-0 self-start md:self-auto">
+            Ver metodología completa
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="space-y-0">
+          {process.map((step, i) => (
+            <div class={`flex flex-col md:flex-row md:items-center gap-6 py-8 ${i < process.length - 1 ? 'border-b border-[#1E2D45]' : ''}`}>
+              <span class="step-number w-20 shrink-0">{step.num}</span>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-white mb-1">{step.title}</h3>
+                <p class="text-slate-400 text-sm">{step.desc}</p>
+              </div>
+              <svg class="hidden md:block text-[#1E2D45] shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════ POR QUÉ NOSOTROS ══════════════════ -->
+    <section class="py-28 border-b border-[#1E2D45]">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          <div>
+            <p class="section-label">Por qué MetaSEO</p>
+            <h2 class="text-5xl md:text-6xl font-black tracking-tight leading-tight mb-8">
+              SEO semántico.<br />No keywords<br /><span class="gradient-text">aisladas.</span>
+            </h2>
+            <p class="text-slate-400 leading-relaxed mb-4">
+              La mayoría de agencias trabajan keyword a keyword. Nosotros construimos la autoridad tópica completa de tu sitio: Google entiende que eres la fuente más relevante de tu nicho.
+            </p>
+            <p class="text-slate-400 leading-relaxed mb-8">
+              Metodología basada en SEO Semántico de Koray Tuğberk GÜBÜR — el estándar más avanzado del sector.
+            </p>
+            <a href="/metodologia" class="btn-primary">
+              Ver nuestra metodología
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4">
+            {[
+              { title: 'Autoridad Tópica', desc: 'Cubrimos cada aspecto de tu nicho para que Google te reconozca como la fuente definitiva.' },
+              { title: 'Resultados Medibles', desc: 'KPIs claros desde el día 1. Posiciones, tráfico, conversiones y Topic Strength Score.' },
+              { title: 'Sin Atajos', desc: 'Nada de black hat ni técnicas de riesgo. Crecimiento sostenible que no desaparece con updates.' },
+              { title: 'Transparencia Total', desc: 'Acceso a todas las herramientas y métricas. Sabes exactamente qué hacemos y por qué.' },
+            ].map(item => (
+              <div class="card-accent">
+                <h3 class="font-bold text-white mb-1">{item.title}</h3>
+                <p class="text-slate-400 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════ TESTIMONIOS ══════════════════ -->
+    <section class="py-28 border-b border-[#1E2D45] bg-[#0D1117]">
+      <div class="mx-auto max-w-7xl px-6">
+
+        <div class="mb-16">
+          <p class="section-label">Testimonios</p>
+          <h2 class="text-5xl md:text-6xl font-black tracking-tight leading-tight">
+            Lo que dicen<br /><span class="gradient-text">nuestros clientes</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1E2D45]">
+          {testimonials.map(t => (
+            <div class="bg-[#0D1117] p-10 flex flex-col gap-6">
+              <!-- Stars -->
+              <div class="flex gap-1">
+                {[1,2,3,4,5].map(() => (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                ))}
+              </div>
+              <blockquote class="text-slate-300 leading-relaxed flex-1">
+                "{t.quote}"
+              </blockquote>
+              <div class="border-t border-[#1E2D45] pt-6">
+                <div class="font-semibold text-white">{t.name}</div>
+                <div class="text-slate-500 text-sm">{t.role} · {t.company}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════ FORMULARIO CONTACTO ══════════════════ -->
+    <section class="py-28 border-b border-[#1E2D45]" id="contacto">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+
+          <!-- Copy -->
+          <div>
+            <p class="section-label">Contacto</p>
+            <h2 class="text-5xl md:text-6xl font-black tracking-tight leading-tight mb-8">
+              ¿Empezamos<br />con tu<br /><span class="gradient-text">proyecto?</span>
+            </h2>
+            <p class="text-slate-400 leading-relaxed mb-10">
+              Cuéntanos tu situación. Te hacemos un análisis inicial de tu web sin coste y sin compromiso. Respondemos en menos de 24 horas.
+            </p>
+            <ul class="space-y-4">
+              {['Auditoría inicial gratuita incluida', 'Respuesta en menos de 24h laborables', 'Sin permanencia ni contratos forzosos', 'Propuesta personalizada a tu negocio'].map(item => (
+                <li class="flex items-center gap-3 text-slate-300 text-sm">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Formulario -->
+          <div>
+            <div id="form-success" class="hidden border border-[#1E2D45] rounded-xl p-12 text-center">
+              <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">¡Mensaje enviado!</h3>
+              <p class="text-slate-400 text-sm">Te contestamos en menos de 24h. Revisa también tu carpeta de spam.</p>
+            </div>
+
+            <form id="home-contact-form" class="space-y-5">
+              <input type="hidden" name="access_key" value="cad8c68f-cf61-489f-a87a-b421ed072242" />
+              <input type="hidden" name="subject" value="Nueva consulta desde MetaSEO.es" />
+              <input type="hidden" name="from_name" value="MetaSEO Web" />
+              <input type="checkbox" name="botcheck" style="display:none;" />
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="hf-nombre" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Nombre *</label>
+                  <input type="text" id="hf-nombre" name="nombre" required placeholder="Tu nombre" class="form-input w-full" />
+                </div>
+                <div>
+                  <label for="hf-empresa" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Empresa</label>
+                  <input type="text" id="hf-empresa" name="empresa" placeholder="Tu empresa" class="form-input w-full" />
+                </div>
+              </div>
+
+              <div>
+                <label for="hf-email" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Email *</label>
+                <input type="email" id="hf-email" name="email" required placeholder="tu@email.com" class="form-input w-full" />
+              </div>
+
+              <div>
+                <label for="hf-web" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">URL de tu web</label>
+                <input type="url" id="hf-web" name="web" placeholder="https://tuweb.com" class="form-input w-full" />
+              </div>
+
+              <div>
+                <label for="hf-mensaje" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">¿En qué podemos ayudarte? *</label>
+                <textarea id="hf-mensaje" name="mensaje" rows="4" required placeholder="Cuéntanos tu reto de posicionamiento..." class="form-input w-full resize-none"></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn-primary w-full justify-center">
+                <span id="btn-text">Enviar consulta gratis</span>
+                <svg id="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg id="btn-spinner" class="hidden animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/></svg>
+              </button>
+
+              <p id="form-error" class="hidden text-red-400 text-xs text-center">
+                Algo salió mal. Escríbenos a hola@metaseo.es
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════ FAQ ══════════════════ -->
+    <section class="py-28 border-b border-[#1E2D45] bg-[#0D1117]">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+
+          <div>
+            <p class="section-label">FAQ</p>
+            <h2 class="text-5xl font-black tracking-tight leading-tight mb-6">
+              Preguntas<br /><span class="gradient-text">frecuentes</span>
+            </h2>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              ¿No encuentras lo que buscas? Escríbenos directamente.
+            </p>
+            <a href="/contacto" class="btn-secondary mt-6 inline-flex">Contactar</a>
+          </div>
+
+          <div class="lg:col-span-2 space-y-0">
+            {faqs.map((faq, i) => (
+              <details class="group border-b border-[#1E2D45] py-6" name="faq">
+                <summary class="flex items-center justify-between cursor-pointer list-none gap-8">
+                  <span class="font-semibold text-white">{faq.q}</span>
+                  <svg class="w-5 h-5 text-slate-500 group-open:rotate-45 transition-transform duration-200 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </summary>
+                <p class="text-slate-400 text-sm leading-relaxed mt-4">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════ CTA FINAL ══════════════════ -->
+    <section class="py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+          <div>
+            <p class="section-label">¿Empezamos?</p>
+            <h2 class="text-5xl md:text-6xl font-black tracking-tight leading-tight">
+              Domina Google<br />en tu sector.<br /><span class="gradient-text">Hoy.</span>
+            </h2>
+          </div>
+          <div class="flex flex-col gap-4 shrink-0">
+            <a href="/servicios/auditoria-seo" class="btn-primary text-base">
+              Quiero mi auditoría gratis
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/contacto" class="btn-secondary text-base justify-center">
+              Hablar con un experto
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // ── Form submit ──
+  const form = document.getElementById('home-contact-form') as HTMLFormElement | null;
+  const successBox = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const btnText = document.getElementById('btn-text');
+  const btnArrow = document.getElementById('btn-arrow');
+  const btnSpinner = document.getElementById('btn-spinner');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submitBtn) return;
+
+    submitBtn.disabled = true;
+    if (btnText) btnText.textContent = 'Enviando...';
+    btnArrow?.classList.add('hidden');
+    btnSpinner?.classList.remove('hidden');
+    errorMsg?.classList.add('hidden');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        form.classList.add('hidden');
+        successBox?.classList.remove('hidden');
+      } else {
+        throw new Error();
+      }
+    } catch {
+      errorMsg?.classList.remove('hidden');
+      submitBtn.disabled = false;
+      if (btnText) btnText.textContent = 'Enviar consulta gratis';
+      btnArrow?.classList.remove('hidden');
+      btnSpinner?.classList.add('hidden');
+    }
+  });
+</script>
+
+<style>
+  /* Inputs del formulario */
+  .form-input {
+    background: #07080F;
+    border: 1px solid #1E2D45;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #F8FAFC;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .form-input::placeholder { color: #475569; }
+  .form-input:focus { border-color: #2563EB; }
+
+  details summary::-webkit-details-marker { display: none; }
+</style>

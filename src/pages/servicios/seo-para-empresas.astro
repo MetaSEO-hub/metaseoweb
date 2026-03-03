@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const features = [
+  { title: 'Consultoría Estratégica', description: 'Roadmap SEO alineado con los objetivos de negocio, OKRs y ciclos de planificación de la empresa.' },
+  { title: 'Account Manager Dedicado', description: 'Un experto SEO senior asignado a tu cuenta. Disponibilidad directa, sin intermediarios.' },
+  { title: 'Formación de Equipos', description: 'Talleres y formación para tu equipo de marketing y contenidos. SEO in-house potenciado por consultoría.' },
+  { title: 'Multi-dominio y Multi-idioma', description: 'Gestión de múltiples dominios, subdominios y estrategias internacionales con hreflang.' },
+  { title: 'Integración con BI y CRM', description: 'Conectamos los datos SEO con tu Business Intelligence para medir el impacto real en el negocio.' },
+  { title: 'Reporting Ejecutivo', description: 'Dashboards personalizados para C-level con los KPIs que importan al negocio, no solo rankings.' },
+];
+---
+
+<Layout
+  title="SEO para Empresas | Consultoría SEO Enterprise - MetaSEO"
+  description="Servicios SEO enterprise para empresas medianas y grandes. Consultoría estratégica, account dedicado, formación de equipos y KPIs de negocio. Solicita propuesta."
+>
+  <Header />
+
+  <main>
+    <!-- HERO -->
+    <section class="relative pt-40 pb-24 grid-bg overflow-hidden">
+      <div class="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full opacity-8 blur-3xl pointer-events-none" style="background: radial-gradient(circle, #7C3AED, transparent);"></div>
+
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl">
+          <div class="section-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            SEO para Empresas · Enterprise
+          </div>
+          <h1 class="text-5xl md:text-6xl font-black tracking-tight mb-6">
+            SEO para empresas<br />
+            <span class="gradient-text">a tu escala</span>
+          </h1>
+          <p class="text-slate-400 text-xl leading-relaxed mb-8 max-w-2xl">
+            Las empresas medianas y grandes necesitan más que una agencia ejecutora. Necesitan un partner estratégico que entienda el negocio, no solo Google.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contacto" class="btn-primary">
+              Solicitar propuesta enterprise
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAS -->
+    <section class="py-20 bg-[#0D1117]">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div class="section-label">Por qué enterprise</div>
+            <h2 class="text-3xl md:text-4xl font-black mb-6">
+              Tu empresa necesita<br /><span class="gradient-text">algo diferente</span>
+            </h2>
+            <div class="space-y-4 text-slate-400 text-sm leading-relaxed">
+              <p>Una empresa con 50+ personas, múltiples líneas de negocio y presencia en varias ciudades no puede trabajar con una agencia que trata todos los proyectos igual.</p>
+              <p>Nuestro servicio enterprise está diseñado para adaptarse a tu estructura, tus procesos internos y tus objetivos de negocio reales.</p>
+              <p>Trabajamos como una extensión de tu equipo, no como un proveedor externo.</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            {[
+              { label: 'Agencia estándar', items: ['Informes genéricos', 'Sin acceso directo al experto', 'KPIs de vanidad (rankings)', 'Sin integración con el equipo'], ok: false },
+              { label: 'MetaSEO Enterprise', items: ['Reportes de negocio', 'Account senior dedicado', 'KPIs de conversión y revenue', 'Trabajo conjunto con tu equipo'], ok: true },
+            ].map(col => (
+              <div class={`card ${col.ok ? 'border-blue-800' : ''}`}>
+                <div class={`text-sm font-semibold mb-3 ${col.ok ? 'text-blue-400' : 'text-slate-500'}`}>{col.label}</div>
+                <ul class="space-y-2">
+                  {col.items.map(item => (
+                    <li class="flex items-center gap-2 text-sm text-slate-300">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={col.ok ? '#10B981' : '#475569'} stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        {col.ok
+                          ? <polyline points="20 6 9 17 4 12"/>
+                          : <><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></>
+                        }
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="py-24">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-black mb-4">Lo que incluye el <span class="gradient-text">plan enterprise</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map(f => (
+            <div class="card">
+              <h3 class="font-bold text-white mb-2">{f.title}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">{f.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-[#0D1117]">
+      <div class="mx-auto max-w-3xl px-6 text-center">
+        <h2 class="text-4xl font-black mb-6">
+          ¿Eres empresa y quieres<br /><span class="gradient-text">escalar tu SEO?</span>
+        </h2>
+        <p class="text-slate-400 text-lg mb-10">
+          Agenda una llamada con nuestro equipo. Analizamos tu situación y diseñamos una propuesta adaptada a tu empresa.
+        </p>
+        <a href="/contacto" class="btn-primary text-base">
+          Hablar con un consultor senior
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,169 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  schema?: object;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  ogImage = '/og-default.jpg',
+  schema,
+} = Astro.props;
+
+const siteName = 'MetaSEO';
+const siteUrl = 'https://metaseo.es';
+const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Primary -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org -->
+    {schema && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
+
+    <!-- Default LocalBusiness Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "MetaSEO",
+      "description": "Agencia SEO especializada en posicionamiento semántico y autoridad tópica en Córdoba, España.",
+      "url": siteUrl,
+      "telephone": "+34 600 000 000",
+      "email": "hola@metaseo.es",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Córdoba",
+        "addressRegion": "Andalucía",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.8882,
+        "longitude": -4.7794
+      },
+      "areaServed": ["Córdoba", "Andalucía", "España"],
+      "serviceType": ["SEO Local", "Posicionamiento Web", "Auditoría SEO", "SEO para Empresas"],
+      "priceRange": "€€",
+      "openingHours": "Mo-Fr 09:00-18:00"
+    })} />
+  </head>
+  <body class="min-h-screen">
+    <slot />
+
+    <!-- WhatsApp flotante -->
+    <a
+      id="wa-btn"
+      href="https://wa.me/34639589192?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20vuestros%20servicios%20SEO"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contactar por WhatsApp"
+      class="wa-float"
+    >
+      <!-- Burbuja de pulse -->
+      <span class="wa-pulse"></span>
+      <!-- Icono WhatsApp -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white">
+        <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.476 2.027 7.785L0 32l8.454-2.007A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.29 22.613c-.344.967-1.703 1.77-2.794 2.003-.744.158-1.715.284-4.984-1.07-4.18-1.714-6.873-5.965-7.082-6.238-.2-.273-1.683-2.238-1.683-4.27 0-2.033 1.065-3.03 1.442-3.443.377-.413.823-.517 1.098-.517.273 0 .548.003.789.014.253.012.592-.096.927.707.344.823 1.168 2.854 1.27 3.062.103.208.17.452.034.727-.137.275-.206.446-.412.686-.207.24-.435.536-.62.72-.207.206-.422.428-.181.84.24.413 1.068 1.762 2.293 2.854 1.575 1.404 2.903 1.838 3.316 2.044.413.207.654.172.894-.103.24-.275 1.03-1.2 1.304-1.613.275-.413.548-.344.926-.207.378.138 2.4 1.132 2.812 1.34.413.206.688.31.79.48.103.17.103.98-.24 1.947z"/>
+      </svg>
+    </a>
+  </body>
+</html>
+
+<style>
+  .wa-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: translateY(16px) scale(0.9);
+    text-decoration: none;
+  }
+
+  .wa-float.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .wa-float:hover {
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.6);
+  }
+
+  /* Anillo de pulse */
+  .wa-pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #25D366;
+    animation: wa-pulse 2.4s ease-out infinite;
+    z-index: -1;
+  }
+
+  @keyframes wa-pulse {
+    0%   { transform: scale(1);   opacity: 0.6; }
+    70%  { transform: scale(1.6); opacity: 0;   }
+    100% { transform: scale(1.6); opacity: 0;   }
+  }
+</style>
+
+<script>
+  const waBtn = document.getElementById('wa-btn');
+
+  // Aparece tras 1.5s o al hacer scroll
+  const show = () => waBtn?.classList.add('visible');
+
+  window.addEventListener('scroll', show, { once: true });
+  setTimeout(show, 1500);
+</script>
